@@ -1,17 +1,19 @@
-import {Auth} from "aws-amplify";
+import { Auth } from "aws-amplify";
 
 export const auth = {
+
     namespaced: true,
-    state: {user: null},
+    state: { user: null },
     mutations: {
-        setUser(state, payload){
+        setUser(state, payload) {
             state.user = payload;
         }
+
     },
     actions: {
         async logout({ commit }) {
-        commit("setUser", null);
-        return await Auth.signOut();
+            commit("setUser", null);
+            return await Auth.signOut();
         },
         async login({ commit }, { username, password }) {
             try {
@@ -63,8 +65,10 @@ export const auth = {
             commit("setUser", userInfo);
 
         }
+
     },
     getters: {
         user: (state) => state.user
     }
+
 }

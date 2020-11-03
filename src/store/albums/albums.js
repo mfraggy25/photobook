@@ -1,4 +1,4 @@
-import { API, graphqlOperation } from "aws-amplify";
+import { API, graphqlOperation, Storage } from "aws-amplify";
 import { createAlbum as createAlbumMutation } from "@/graphql/mutations";
 import { getAlbum as getAlbumQuery } from "@/graphql/queries";
 import { listAlbums as listAlbumsQuery } from '@/graphql/queries';
